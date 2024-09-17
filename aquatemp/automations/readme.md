@@ -1,6 +1,6 @@
 # These are my automations that I have for my aquatemp controlled pool heat pump (Astral Viron iHP195).
 
-These are the full automation yamls that are loadable. My Device has an entity name of climate.aquatemp - yours might be different. This may or may not work with TUYA devices.
+These are the full automation yamls that are loadable. My Device has an entity name of climate.aquatemp - yours might be different. This may or may not work with TUYA devices. Also depends on my Fronius Integration with consumption monitoring in place for the Solar entity use. Yours may vary in name and capability.
 
 
 ### Turn On Pool heater (this is the first automation that will run at start of day)
