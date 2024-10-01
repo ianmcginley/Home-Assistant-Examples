@@ -24,3 +24,18 @@ Note, i don't both with stepping back up the chain, i go back to full power. In 
 
 ### Turn Off Pool Heater at Sunset (end of day)
 The heat pump is usually idling by now due to stage 2 of setting target temp to below inlet_temp, but I want to ensure it's properly off overnight.
+
+### Creating a Calculation of effective heatpump output ###
+This is a template sensor with some calculations in in that need to be explained.
+
+        {% set flow_rate_lpm = 2 %} 
+        
+Change the value to a best prediction of flow of water by your pump in litres per minute
+
+        {% set water_heat_capacity = 4.186 %}
+        
+This is an accepted value for the specific heat capacity of PURE water, however due to salt, chlorine, calcium, magnesium etc in the pool water it might be different - and research suggests lower, but probably is not affecting the calculation at all. If you want to simplify, set to 4.0.
+
+        {% set hp_state = state_attr('climate.aquatemp', 'power') %}
+
+This Gets the current state of the power system for the Climate Integration which is AquaTemp, the HACS plugin for my pool. If the HP is off, then it stands to reason any effective power out is 0.
