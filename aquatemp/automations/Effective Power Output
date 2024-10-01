@@ -1,0 +1,13 @@
+  - sensor:
+    - name: Pool Heating Effective Output
+      unit_of_measurement: 'W'
+      value_template: >- 
+        {% set flow_rate_lpm = 2 %}
+        {% set water_heat_capacity = 4.186 %}
+        {% set eff_t = flow_rate_lpm * water_heat_capacity * states('sensor.pool_heatpump_temperature_differential')|float * 1000 %}
+        {% set hp_state = state_attr('climate.aquatemp', 'power') %}
+        {% if hp_state == Off %} 0
+        {% else %} {{ eff_t }}
+        {% endif %}
+      state_class: measurement
+      device_class: power
