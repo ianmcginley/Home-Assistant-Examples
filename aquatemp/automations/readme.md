@@ -30,7 +30,7 @@ This is a template sensor with some calculations in in that need to be explained
 
         {% set flow_rate_lpm = 2 %} 
         
-Change the value to a best prediction of flow of water by your pump in litres per minute
+Change the value to a best prediction of flow of water by your pump in litres per second
 
         {% set water_heat_capacity = 4.186 %}
         
