@@ -28,13 +28,13 @@ The heat pump is usually idling by now due to stage 2 of setting target temp to 
 ### Creating a Calculation of effective heatpump output ###
 This is a template sensor with some calculations in in that need to be explained.
 
-        {% set flow_rate_lpm = 2 %} 
+        {% set flow_rate_lps = 2 %} 
         
 Change the value to a best prediction of flow of water by your pump in litres per second
 
         {% set water_heat_capacity = 4.186 %}
         
-This is an accepted value for the specific heat capacity of PURE water, however due to salt, chlorine, calcium, magnesium etc in the pool water it might be different - and research suggests lower, but probably is not affecting the calculation at all. If you want to simplify, set to 4.0.
+This is an accepted value for the specific heat capacity of PURE water, however due to salt, chlorine, calcium, magnesium etc in the pool water it might be different - and research suggests lower, but probably is not affecting the calculation at all. If you want to simplify, set to 4.0. Units are Joules per Kilogram of water per degree Celsius - J/kg·°C.
 
         {% set hp_state = state_attr('climate.aquatemp', 'power') %}
 
