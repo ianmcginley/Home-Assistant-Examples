@@ -1,3 +1,6 @@
+Source URL for all firmware: https://github.com/Koenkk/Z-Stack-firmware/tree/master/router/Z-Stack_3.x.0
+Look in tags rather than Master for Updates.
+
 All you need is a serial terminal emulator that supports Xmodem file transfer protocol. I downloaded ExtraPuTTY from SourceForge for free. I used Windows but there are builds for most common operating systems.
 
 You will need a Philips Head #00 screwdriver to remove the dongle from the case.
